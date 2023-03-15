@@ -35,21 +35,22 @@ def is_bucket_exist(bucket_name="testbucketwithcli11"):
 
 
 def upload_file(file, bucket, s3Key):
-    response = client.put_object(
-        Body =  file,
-        Bucket = bucket, 
-        Key = s3Key
-        )
+    print(file)
+    with open(file, 'rb') as data:
+        client.put_object(
+            Body = data,
+            Bucket = bucket, 
+            Key = s3Key,
+            ContentType = 'image/jpeg'
+            )
     return "successfully uploaded"
 
 
 def download_from_S3(bucket, s3Key, filename):
     
-    response = client.download_file(
-        Bucket = bucket,
-        Key = s3Key,
-        Filename = filename
-        )
+    with open(filename, 'wb') as data:
+        response = client.download_fileobj(bucket, s3Key, data)
+    
     return f"successfulle uploaded. pls check it {filename}"
 
 
@@ -65,5 +66,6 @@ def is_file_exist(s3Key, bucket_name="testbucketwithcli11"):
     
 
 if __name__ == "__main__":
-    #print( download_from_S3('testbucketwithcli11', "угар.jpg", os.path.join(os.path.curdir, "S3угар.jpg")) )
-    print(is_file_exist("угар.jpg"))
+    #print(download_from_S3('testbucketwithcli11', "wARL1N.jpg", "imgs/test1.jpg"))
+    #print( upload_file("/home/sxnity/Desktop/trainee/imgs/image2(cat).jpg", 'testbucketwithcli11', 'wARL1N.jpg') )
+    pass
