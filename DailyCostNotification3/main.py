@@ -6,7 +6,7 @@ import requests
 from dailyCostNotification import DCN, BillingDays
 from utils import MyJsonEncoder
 
-webhook_url = "https://hooks.slack.com/services/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"
+webhook_url = "https://hooks.slack.com/services/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"
 myEncoder = MyJsonEncoder()
 today = datetime.now()
 yesterday = today - timedelta(days=1)
@@ -90,4 +90,4 @@ def main():
     return res
 
 if __name__ == "__main__":
-    main()
+    print(main())
