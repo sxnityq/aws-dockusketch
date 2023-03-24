@@ -1,0 +1,16 @@
+boto3==1.26.92
+boto3-stubs==1.26.94
+botocore==1.29.92
+botocore-stubs==1.29.94
+certifi==2022.12.7
+charset-normalizer==3.1.0
+idna==3.4
+jmespath==1.0.1
+python-dateutil==2.8.2
+requests==2.28.2
+s3transfer==0.6.0
+six==1.16.0
+types-awscrt==0.16.12
+types-s3transfer==0.6.0.post6
+typing_extensions==4.5.0
+urllib3==1.26.15
