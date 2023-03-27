@@ -2,6 +2,6 @@ venv/
 imgs/
 .pem/
 __pycache__/
-.env/
+.env
 deployment-package.zip
 package/
