@@ -36,7 +36,7 @@ class EC2Service:
     
     def __init__(self):
         self.client = boto3.client("ec2", region_name=region)
-    
+
     
     def create_instance_from_AMI(self, KeyPairName, SecurityGroup, AMIID="ami-07f14a50ac6da05e2", InstanceType='t2.micro'):
         

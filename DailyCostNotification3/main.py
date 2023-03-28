@@ -92,5 +92,7 @@ def send_message():
     return requests.post(url=os.getenv("webhook_url"), data=response)
 
 def main(event, context):
-    send_message()
+    print(send_message())
     return "expense statistics sent successfully"
+
+main(1, 2)
