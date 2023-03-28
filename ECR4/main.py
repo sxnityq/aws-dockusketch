@@ -71,6 +71,10 @@ class EcrRepos:
                     print("policy attached")
                 except (ParamValidationError, self.client_public.exceptions.InvalidParameterException) as ex:
                     print("incorrect policy.\nPlease check your policy")
+                    
+    def main(self, user_profile, policy):
+        self.attach_private_policy(user_profile=user_profile, policy=policy)
+        self.attach_public_policy(user_profile=user_profile, policy=policy)
 
 
 test = EcrRepos()
